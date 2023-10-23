@@ -1,0 +1,19 @@
+extend layout
+
+block content
+  h1 Login
+  form(action='' method='post')
+    div.container
+      label(for='email') Email:
+      input#email.form-control(
+        type="email",
+        name='email',
+        value=''
+      ) 
+      label(for='password') Password:
+      input#password.form-control(
+        type="password",
+        name='password',
+        value=''
+      )
+      button.btn.btn-primary(type='submit') Login

@@ -7,8 +7,7 @@ const UserSchema = new Schema({
   last_name : {type: String, required: true},
   email: {type: String, required: true},
   password: {type:String, required: true},
-  membership_status: Boolean
-
+  membership_status: {type: Boolean, default: false}
 })
 
 // Virtual for user's full name
@@ -17,11 +16,10 @@ UserSchema.virtual("name").get(function () {
   if(this.first_name && this.last_name) {
     fullname = `${this.first_name} ${this.last_name}`
   }
-
   return fullname
 })
 
-//Virtual for user's URL
+// Virtual for user's URL
 UserSchema.virtual("url").get(function () {
   return `/catalog/user/${this._id}`;
 })

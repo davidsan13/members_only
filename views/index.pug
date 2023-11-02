@@ -1,8 +1,9 @@
-extends layout
+extends layout.pug
 
 block content
-  h1= title
-  if user
-    p Welcome to #{user.name}
-  else
-    p Welcome no user
+  div.content
+    h1=title
+    if user
+      p Welcome to #{user.name}
+    else
+      p Welcome no user #{title}

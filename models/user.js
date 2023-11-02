@@ -21,7 +21,7 @@ UserSchema.virtual("name").get(function () {
 
 // Virtual for user's URL
 UserSchema.virtual("url").get(function () {
-  return `/catalog/user/${this._id}`;
+  return `/user/${this._id}`;
 })
 
 module.exports = mongoose.model("User", UserSchema)

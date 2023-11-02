@@ -1,8 +1,138 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-a {
-  color: #00B7FF;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+hgroup,
+menu,
+section {
+  display: block;
 }
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+  background-color: #1ab2ba;
+  overflow: hidden;
+  border: 1px solid #4400ff;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --color-background: #b7eedc;
+  --color-background-secondary:#68BD9E;
+  --color-button:#8ED0B8;
+  --color-button-secondary: #229169;
+  --color-white: #FEFCFC;
+  --color-black: rgb(41, 41, 41);
+  --br-sm-2: 14px;
+  --box-shadow-1: 0px 4px 4px rgba(0,0,0,.25);
+}
+
+body {
+  border: 1px solid red;
+  background: var(--color-background);
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+body nav {
+  margin: 10px;
+  position: relative;
+  height: 50px;
+  border-radius: 35px;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--color-white);
+}
+
+body nav h1 {
+  font-size: 3rem;
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+body nav h2 {
+  font-size: 2rem;
+}
+
+body .content {
+  margin: 10px;
+  padding-bottom: 2.5rem;
+}
+
+body footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 10px;
+  height: 50px;
+  border-radius: 35px;
+  background: var(--color-white);
+}
+
+body .sec-background {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 75%;
+  height: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+body .sec-background svg {
+  position: absolute;
+  display: block;
+  right: 0;
+  fill: var(--color-background-secondary);
+  -webkit-transform: scale(10deg);
+          transform: scale(10deg);
+}
+
+nav, footer {
+  -webkit-box-shadow: var(--box-shadow-1);
+          box-shadow: var(--box-shadow-1);
+}
+/*# sourceMappingURL=style.css.map */

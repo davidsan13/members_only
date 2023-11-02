@@ -97,6 +97,28 @@ exports.user_create_post = [
   })
 ]
 
+exports.user_update_get = asyncHandler(async (req, res, next) => {
+  const user = User.findById(req.params.id).exec()
+
+  if(user === null) {
+    res.redirect("/")
+  }
+
+  res.render("")
+})
+
+exports.user_update_post = asyncHandler(async (req, res, next) => {
+  res.send('POST update')
+})
+
+exports.user_delete_get = asyncHandler(async (req, res, next) => {
+  res.render('index', {title: "delete"})
+})
+exports.user_delete_post = asyncHandler(async (req, res, next) => {
+  res.send('POST delete')
+})
+
+
 exports.user_login_get = asyncHandler(async (req, res, next) => {
   res.render("login")
 })
@@ -116,13 +138,3 @@ exports.user_logout_get = asyncHandler(async (req, res, next) => {
   })
 })
 
-// message_room controller
-
-exports.message_room_get = asyncHandler(async (req, res, next) => {
-  res.render('message_room')
-})
-
-exports.message_room_post = [asyncHandler(async (req, res, next) => {
-  res.render("message_room")
-})
-]

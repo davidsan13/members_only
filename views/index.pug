@@ -2,10 +2,19 @@ extends layout.pug
 
 block content
   div.content
-    h1=title
-    if user
-      p Welcome to #{user.name}
-    else
-      p Welcome no user #{title}
-    div.message-container
+    div.content-left
+      h1 Members Only
+      if user
+        p Welcome #{user.name}
+      p An exclusive clubhouse platform that allow you to write anyonymous post. 
+      <br>Only members of the clubhouse are able to see who the author of a post is.
+    div.content-right
       h1 Messages
+      ul
+        li 
+          h1.user=user ? 'name' : 'no name'
+          h2 message
+        li 
+          h1.user=user ? 'name' : 'no name'
+          h2 message
+         

@@ -53,8 +53,10 @@ table {
 :root {
   --color-background: #b7eedc;
   --color-background-secondary:#68BD9E;
-  --color-button:#8ED0B8;
-  --color-button-secondary: #229169;
+  --color-button: #52E0AC;
+  --color-secondary:#8ED0B8;
+  --color-button-hover: #229169;
+  
   --color-white: #FEFCFC;
   --color-black: rgb(41, 41, 41);
   --br-sm-2: 14px;
@@ -98,7 +100,7 @@ body {
       }
       >li:hover {
         text-decoration: underline;
-        text-decoration-color: var(--color-button-secondary);
+        text-decoration-color: var(--color-button-hover);
         text-decoration-thickness: 2px;
         a {
           color:rgba(27, 27, 27, 0.648);
@@ -147,8 +149,32 @@ body {
         background-color: var(--color-white);
         box-shadow: var(--box-shadow-1);
         border-radius: 5px;
-        border: 1px solid var(--color-button);
+        border: 1px solid var(--color-secondry);
         opacity: .9;
+      }
+    }
+    .content-right-sign-up {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      padding-left: 2rem;
+    }
+    form {
+      .form-group{
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+      }
+      input {
+        box-shadow:var(--box-shadow-1);
+        border-radius: 5px;
+        border-bottom: 2px solid var(--color-secondary)
+      }
+      button {
+        color: var(--color-white);
+        border-radius: 5px;
+        background-color: var(--color-button);
+        margin-top: .5rem;
       }
     }
   }

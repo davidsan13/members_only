@@ -1,19 +1,22 @@
 extend layout
 
 block content
-  h1 Login
-  form(action='' method='post')
-    div.container
-      label(for='username') Email:
-      input#username.form-control(
-        type="email",
-        name='username',
-        value=''
-      ) 
-      label(for='password') Password:
-      input#password.form-control(
-        type="password",
-        name='password',
-        value=''
-      )
-      button.btn.btn-primary(type='submit') Login
+  div.content
+    div.content-left
+      h1 Login
+      form(action='' method='post')
+        div.container
+          label(for='username') Email:
+          input#username.form-control(
+            type="email",
+            name='username',
+            value=''
+          ) 
+          label(for='password') Password:
+          input#password.form-control(
+            type="password",
+            name='password',
+            value=''
+          )
+          button.btn.btn-primary(type='submit') Login
+    div.content-right 

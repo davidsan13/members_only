@@ -1,31 +1,36 @@
 extends layout
 
 block content
-  h1 Sign Up
-  form(method='Post' action='')
-    div.form-group
-      label(for='firstName')  First Name: 
-      input#firstName.form-control(
-        type='text',
-        name='firstName',
-        value='',
-      )
-      label(for='lastName')  Last Name: 
-      input#lastName.form-control(
-        type='text',
-        name='lastName',
-        value=''
-      )
-      label(for='email')  Email: 
-      input#email.form-control(
-        type='email',
-        name='email',
-        value=''
-      )
-      label(for='password')  Password: 
-      input#password.form-control(
-        type='password',
-        name='password',
-        value=''
-      )
-      button.btn.btn-primary(type='submit') Submit
+  div.content
+    div.content-left
+      h1 Sign Up
+      form(method='Post' action='')
+        div.form-group
+          label(for='firstName')  First Name: 
+          input#firstName.form-control(
+            type='text',
+            name='firstName',
+            value='',
+          )
+          label(for='lastName')  Last Name: 
+          input#lastName.form-control(
+            type='text',
+            name='lastName',
+            value=''
+          )
+          label(for='email')  Email: 
+          input#email.form-control(
+            type='email',
+            name='email',
+            value=''
+          )
+          label(for='password')  Password: 
+          input#password.form-control(
+            type='password',
+            name='password',
+            value=''
+          )
+          button.btn.btn-primary(type='submit') Submit
+    div.content-right-sign-up
+      h1 Become a member
+      p Sign up to be a member of an exclusive group 

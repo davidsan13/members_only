@@ -51,8 +51,9 @@ table {
 :root {
   --color-background: #b7eedc;
   --color-background-secondary:#68BD9E;
-  --color-button:#8ED0B8;
-  --color-button-secondary: #229169;
+  --color-button: #52E0AC;
+  --color-secondary:#8ED0B8;
+  --color-button-hover: #229169;
   --color-white: #FEFCFC;
   --color-black: rgb(41, 41, 41);
   --br-sm-2: 14px;
@@ -107,8 +108,8 @@ body nav .nav-right a {
 
 body nav .nav-right > li:hover {
   text-decoration: underline;
-  -webkit-text-decoration-color: var(--color-button-secondary);
-          text-decoration-color: var(--color-button-secondary);
+  -webkit-text-decoration-color: var(--color-button-hover);
+          text-decoration-color: var(--color-button-hover);
   text-decoration-thickness: 2px;
 }
 
@@ -173,8 +174,46 @@ body .content .content-right li {
   -webkit-box-shadow: var(--box-shadow-1);
           box-shadow: var(--box-shadow-1);
   border-radius: 5px;
-  border: 1px solid var(--color-button);
+  border: 1px solid var(--color-secondry);
   opacity: .9;
+}
+
+body .content .content-right-sign-up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-left: 2rem;
+}
+
+body .content form .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .6rem;
+}
+
+body .content form input {
+  -webkit-box-shadow: var(--box-shadow-1);
+          box-shadow: var(--box-shadow-1);
+  border-radius: 5px;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+body .content form button {
+  color: var(--color-white);
+  border-radius: 5px;
+  background-color: var(--color-button);
+  margin-top: .5rem;
 }
 
 body footer {

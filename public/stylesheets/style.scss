@@ -126,7 +126,7 @@ body {
       width: 30%;
       h1 {
         padding-bottom: 1rem;
-        font-size: 4rem;
+        font-size: 3.5rem;
       }
       p {
         // font-size: 2rem;
@@ -153,11 +153,15 @@ body {
         opacity: .9;
       }
     }
-    .content-right-sign-up {
+    .content-right-form {
       display: flex;
       flex-direction: column;
       align-self: flex-start;
       padding-left: 2rem;
+      font-weight: bold;
+      p {
+        // font-size: 2.rem;
+      }
     }
     form {
       .form-group{
@@ -166,9 +170,18 @@ body {
         gap: .6rem;
       }
       input {
+        padding: .2rem 1rem;
         box-shadow:var(--box-shadow-1);
         border-radius: 5px;
-        border-bottom: 2px solid var(--color-secondary)
+        border-bottom: 2px solid var(--color-secondary);
+        outline: none;
+        &:focus {
+          border-bottom: 4px solid var(--color-button-hover);
+        }
+        // &:invalid {
+        //   border: 2px solid red;
+        // }
+        
       }
       button {
         color: var(--color-white);

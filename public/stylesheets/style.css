@@ -142,7 +142,7 @@ body .content .content-left {
 
 body .content .content-left h1 {
   padding-bottom: 1rem;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 body .content .content-right {
@@ -178,7 +178,7 @@ body .content .content-right li {
   opacity: .9;
 }
 
-body .content .content-right-sign-up {
+body .content .content-right-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,6 +189,7 @@ body .content .content-right-sign-up {
   -ms-flex-item-align: start;
       align-self: flex-start;
   padding-left: 2rem;
+  font-weight: bold;
 }
 
 body .content form .form-group {
@@ -203,10 +204,16 @@ body .content form .form-group {
 }
 
 body .content form input {
+  padding: .2rem 1rem;
   -webkit-box-shadow: var(--box-shadow-1);
           box-shadow: var(--box-shadow-1);
   border-radius: 5px;
   border-bottom: 2px solid var(--color-secondary);
+  outline: none;
+}
+
+body .content form input:focus {
+  border-bottom: 4px solid var(--color-button-hover);
 }
 
 body .content form button {

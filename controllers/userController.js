@@ -54,7 +54,7 @@ exports.user_create_post = [
     .isLength({min: 2})
     .escape(),
   
-  body("email", "email must contain at least 2 characters")
+  body("email", "email must be a valid email address")
     .trim()
     .escape()
     .normalizeEmail()

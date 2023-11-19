@@ -2,10 +2,7 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/user")
 const asyncHandler = require("express-async-handler")
 const { body, validationResult } = require("express-validator");
-
-
-
-
+const passport = require("passport");
 
 
 
@@ -26,7 +23,7 @@ exports.user_create_post = [
     .isLength({min: 2})
     .escape(),
   
-  body("email", "email must be a valid email address")
+  body("email", "email must contain at least 2 characters")
     .trim()
     .escape()
     .normalizeEmail()

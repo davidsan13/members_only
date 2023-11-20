@@ -1,5 +1,17 @@
 const Message = require("../models/message")
 const asyncHandler = require("express-async-handler")
+const User = require("../models/user")
+
+exports.index_get = asyncHandler(async (req, res, next) => {
+  const messages = await Message.find()
+  const users = await User.find()
+  res.render('index', {
+    title: 'Members Only', 
+    user: req.user,
+    messages: messages,
+
+  })
+})
 
 // message_room controller
 

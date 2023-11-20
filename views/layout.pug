@@ -13,8 +13,11 @@ html
       ul.nav-right
         li 
           a(href='/signup') Sign Up
-        li 
-          a(href='/login') Log In
+        li
+          if(!user) 
+            a(href='/login') Log In
+          else
+            a(href='/logout') Log Out
     block content
     
     footer

@@ -10,11 +10,16 @@ block content
       <br>Only members of the clubhouse are able to see who the author of a post is.
     div.content-right
       h1 Messages
-      ul
-        li 
-          h1.user=user ? 'name' : 'no name'
-          h2 message
-        li 
-          h1.user=user ? 'name' : 'no name'
-          h2 message
-         
+      if messages.length == 0
+        p There are no messages posted.
+        p Be the first to post a message
+        
+      else 
+        ul
+          // loop through message and crefate 
+          each message in messages
+            li 
+              h1.user=user ? 'name' : 'no name'
+              h2 #{message.text}
+        button Add Message
+          

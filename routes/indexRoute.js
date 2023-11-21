@@ -27,21 +27,21 @@ router.post('/user/:id/delete', user_controller.user_delete_post)
 
 
 //message route
-router.get('/message_room', message_controller.message_room_get)
+router.get('/message', message_controller.message_get)
 
 // Create message
-router.get('/message_room/create', message_controller.message_create_get)
+router.get('/message/create', message_controller.message_create_get)
 
-router.post('/message_room/create', message_controller.message_create_post)
+router.post('/message/create', message_controller.message_create_post)
 
 // Delete message
-router.get('/message_room/:id/delete', message_controller.message_delete_get)
+router.get('/message/:id/delete', message_controller.message_delete_get)
 
-router.get('/message_room/:id/delete', message_controller.message_delete_post)
+router.get('/message/:id/delete', message_controller.message_delete_post)
 
 // Edit message 
-router.get('/message_room/:id/update', message_controller.message_update_get)
+router.get('/message/:id/update', message_controller.message_update_get)
 
-router.post('/message_room/:id/update', message_controller.message_update_post)
+router.post('/message/:id/update', message_controller.message_update_post)
 
 module.exports = router;

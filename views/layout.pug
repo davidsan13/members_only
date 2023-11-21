@@ -3,6 +3,7 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type="text/javascript" src='/javascripts/listener.js' defer)
   body
     div.sec-background
       svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 1100 900" width="1100" height="900" version="1.1")
@@ -14,10 +15,11 @@ html
         li 
           a(href='/signup') Sign Up
         li
-          if(!user) 
+          if !user
             a(href='/login') Log In
           else
             a(href='/logout') Log Out
+    
     block content
     
     footer
@@ -27,3 +29,13 @@ html
         a(href='https://www.linkedin.com/in/davidsan13/') 
           img(src='/images/linkedin.png')
       h1 Copyright
+  section.modal.hidden
+    form(method='Post' action='')
+      label(for='message') Message
+      textarea#message.form-control(
+        type='textarea',
+        name='message',
+      )
+      button Submit
+  div.overlay.hidden
+    

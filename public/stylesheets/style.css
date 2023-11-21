@@ -224,9 +224,6 @@ body .content form input:focus {
 }
 
 body .content form button {
-  color: var(--color-white);
-  border-radius: 5px;
-  background-color: var(--color-button);
   margin-top: .5rem;
 }
 
@@ -282,6 +279,83 @@ body .sec-background svg {
   fill: var(--color-background-secondary);
   -webkit-transform: scale(10deg);
           transform: scale(10deg);
+}
+
+.modal {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  width: 350px;
+  min-height: 300px;
+  top: 20%;
+  -webkit-backdrop-filter: blur(1.5px);
+          backdrop-filter: blur(1.5px);
+  background-color: #faf4f4fb;
+  border-radius: 5px;
+  padding: 1.3rem;
+  gap: 0.4rem;
+}
+
+.modal form {
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  gap: .5rem;
+  font-size: 2rem;
+}
+
+.modal form label {
+  font-weight: bold;
+  font-size: 2.5rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.modal form textarea {
+  border-radius: 5px;
+  height: 15rem;
+  width: 24rem;
+  outline: none;
+  padding: 1rem;
+  line-height: 1em;
+  resize: none;
+  -webkit-box-shadow: var(--box-shadow-1);
+          box-shadow: var(--box-shadow-1);
+}
+
+.modal form button {
+  margin: 1rem;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  color: var(--color-white);
+  border-radius: 5px;
+  background-color: var(--color-button);
+  -webkit-box-shadow: var(--box-shadow-1);
+          box-shadow: var(--box-shadow-1);
 }
 
 nav, footer {

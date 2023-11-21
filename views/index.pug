@@ -1,5 +1,6 @@
 extends layout.pug
 
+
 block content
   div.content
     div.content-left
@@ -10,6 +11,7 @@ block content
       <br>Only members of the clubhouse are able to see who the author of a post is.
     div.content-right
       h1 Messages
+      p #{button.Object}
       if messages.length == 0
         p There are no messages posted.
         p Be the first to post a message
@@ -21,5 +23,5 @@ block content
             li 
               h1.user=user ? 'name' : 'no name'
               h2 #{message.text}
-        button Add Message
+          button.modal-btn(type='button')  Add Message
           

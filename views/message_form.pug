@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  section.modal_hidden
+  div.modal
+    form(method='Post' action='')
+      label(for='message') Message
+      textarea#message.form-control(
+        type='textarea',
+        name='message',
+      )
+      button Submit

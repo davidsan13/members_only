@@ -32,7 +32,7 @@ router.get('/message', message_controller.message_get)
 // Create message
 router.get('/message/create', message_controller.message_create_get)
 
-router.post('/message/create', message_controller.message_create_post)
+router.post('/', message_controller.message_create_post)
 
 // Delete message
 router.get('/message/:id/delete', message_controller.message_delete_get)

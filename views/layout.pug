@@ -29,13 +29,15 @@ html
         a(href='https://www.linkedin.com/in/davidsan13/') 
           img(src='/images/linkedin.png')
       h1 Copyright
-  section.modal.hidden
-    form(method='Post' action='')
-      label(for='message') Message
-      textarea#message.form-control(
-        type='textarea',
-        name='message',
-      )
-      button Submit
-  div.overlay.hidden
+    div.overlay.hidden
+      section.modal.hidden
+        <button class="btn-close">⨉</button>
+        form(method='Post' action='')
+          label(for='message') Message
+          textarea#message.form-control(
+            type='textarea',
+            name='message',
+          )
+          button Submit
+    
     

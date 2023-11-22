@@ -6,7 +6,8 @@ const MessageSchema = new Schema({
   title: {type: String},
   text: {type: String},
   created: {type: Date, default: Date.now},
-  user: {type: Schema.Types.ObjectId, ref: "User"}
+  user: {type: Schema.Types.ObjectId, ref: "User"},
+  name: {type: String}
 })
 
 MessageSchema.virtual("url").get(function () {

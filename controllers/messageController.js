@@ -1,5 +1,6 @@
 const Message = require("../models/message")
 const asyncHandler = require("express-async-handler")
+const { body, validationResult } = require("express-validator");
 
 exports.index_get = asyncHandler(async (req, res, next) => {
   const messages = await Message.find()
@@ -30,10 +31,34 @@ exports.message_create_get = asyncHandler(async (req, res, next) => {
   res.render('message_form')
 })
 
-exports.message_create_post = asyncHandler(async (req, res, next) => {
+exports.message_create_post = [
+
+  body("message", "Message must container at least 2 characters")
+    .trim()
+    .isLength({min: 2})
+    .escape(),
+
+  asyncHandler(async (req, res, next) => {
+    const errors = validationResult(req);
+    
+    const message = new Message({
+      text: req.body.message,
+      user: req.user._id,
+      name: req.user.first_name
+    })
+
+    if(!errors.isEmpty()) {
+      res.render('index', {
+        errors: errors.array(),
+      });
+      return;
+    } else {
+      await message.save()
+      res.redirect("/")
+    }
   res.render('POST create')
 })
-
+]
 exports.message_delete_get = asyncHandler(async (req, res, next) => {
   res.render('GET delete')
 })

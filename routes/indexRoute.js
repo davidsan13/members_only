@@ -17,6 +17,8 @@ router.post('/login', user_controller.user_login_post);
 
 router.get('/logout', user_controller.user_logout_get)
 
+router.post('/join', user_controller.user_join_post)
+
 router.get('/user/:id/update', user_controller.user_update_get)
 
 router.post('/user/:id/update', user_controller.user_update_post)
@@ -26,13 +28,14 @@ router.get('/user/:id/delete', user_controller.user_delete_get)
 router.post('/user/:id/delete', user_controller.user_delete_post)
 
 
+
 //message route
 router.get('/message', message_controller.message_get)
 
 // Create message
 router.get('/message/create', message_controller.message_create_get)
 
-router.post('/', message_controller.message_create_post)
+router.post('/create', message_controller.message_create_post)
 
 // Delete message
 router.get('/message/:id/delete', message_controller.message_delete_get)

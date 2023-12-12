@@ -4,20 +4,11 @@ const { body, validationResult } = require("express-validator");
 
 exports.index_get = asyncHandler(async (req, res, next) => {
   const messages = await Message.find()
-  const button = req.body
-  // button.addEventListener('click', () => {
-  //   console.log('Message Added')
-  // })
-  // console.log(button)
-  // res.json({
-  //   button: button,
-  // })
+  
   res.render('index', {
     title: 'Members Only', 
     user: req.user,
     messages: messages,
-    button: button
-
   })
 })
 
@@ -40,7 +31,8 @@ exports.message_create_post = [
 
   asyncHandler(async (req, res, next) => {
     const errors = validationResult(req);
-    
+    const reMessage = req.body.messageBtn
+    console.log(reMessage)
     const message = new Message({
       text: req.body.message,
       user: req.user._id,

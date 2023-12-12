@@ -1,27 +1,49 @@
 extends layout.pug
 
-
 block content
+  div.overlay.hidden
+    section.modal.hidden
+      <button class="btn-close">⨉</button>
+      form(method='Post' action='/create')
+        label(for='message') Message
+        textarea#message.form-control(
+          type='textarea',
+          name='message',
+        )
+        button Submit
+  div.overlay-member.hidden
+    section.modal-member.hidden
+      button.btn-close-member ⨉
+      form(method='Post' action='/join')
+        label(for='member') Password
+        input#member.form-control(
+          type='text',
+          name='member',
+        )
+        button Submit
   div.content
     div.content-left
       h1 Members Only
       if user
         p Welcome #{user.name}
-      p An exclusive clubhouse platform that allow you to write anyonymous post. 
-      <br>Only members of the clubhouse are able to see who the author of a post is.
+        if !user.isMember
+        p Only members of the clubhouse are able to see who the author of a post is.
+        button.modal-member-btn(type='button') Join Clubhouse
+      p An exclusive clubhouse platform that allow you to write anyonymous post.
+      
     div.content-right
       h1 Messages
-      p #{button.Object}
       if messages.length == 0
         p There are no messages posted.
-        p Be the first to post a message
-        
+        p Be the first to post a messags
       else 
         ul
           // loop through message and crefate 
           each message in messages
             li 
-              h1.user=user ? 'name' : 'no name'
+              if user && user.isMember
+                h1.user=user ? 'name' : 'no name'
               h2 #{message.text}
-          button.modal-btn(type='button')  Add Message
+          button.modal-btn(type='button') Add Message
+
           

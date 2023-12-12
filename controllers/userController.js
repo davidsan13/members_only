@@ -61,7 +61,7 @@ exports.user_create_post = [
         res.redirect("/", {message: "existing email"})
       } else {
         console.log(user)
-        // await user.save()
+        await user.save()
         res.redirect("/")
       }
     }
@@ -80,6 +80,23 @@ exports.user_update_get = asyncHandler(async (req, res, next) => {
 
 exports.user_update_post = asyncHandler(async (req, res, next) => {
   res.send('POST update')
+})
+
+exports.user_join_post = asyncHandler(async (req, res, next) => {
+  const password = req.body.member
+  if (password == process.env.secret) {
+    const userId = (req.user._id).toString()
+    const userExists = await User.findById(userId).exec()
+    if(userExists) {
+      userExists.isMember = true;
+      await userExists.save()
+      res.redirect("/")
+    }
+  }
+  else {
+    console.log('incorrect')
+    res.redirect("/")
+  }
 })
 
 exports.user_delete_get = asyncHandler(async (req, res, next) => {

@@ -22,7 +22,6 @@ html {
   font-size: 62.5%;
   font-family: sans-serif;
   background-color: #1ab2ba;
-  overflow: hidden;
 }
 
 ol,
@@ -61,7 +60,6 @@ table {
 }
 
 body {
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,6 +140,10 @@ body .content {
   gap: 5rem;
 }
 
+body .content button {
+  padding: .5rem;
+}
+
 body .content .content-left {
   font-weight: bold;
   width: 30%;
@@ -164,6 +166,22 @@ body .content .content-right {
           flex-direction: column;
   -ms-flex-item-align: start;
       align-self: flex-start;
+}
+
+body .content .content-right ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .content .content-right ul button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 body .content .content-right h1 {
@@ -281,7 +299,7 @@ body .sec-background svg {
           transform: scale(10deg);
 }
 
-.overlay {
+.overlay, .overlay-member {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -304,7 +322,31 @@ body .sec-background svg {
   z-index: 1;
 }
 
-.overlay .modal {
+.overlay .modal-member, .overlay-member .modal-member {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+  z-index: 2;
+  width: 350px;
+  min-height: 150px;
+  background-color: #faf4f4fb;
+  border-radius: 5px;
+  padding: 1.3rem;
+}
+
+.overlay .modal, .overlay-member .modal {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -319,15 +361,13 @@ body .sec-background svg {
   z-index: 2;
   width: 350px;
   min-height: 300px;
-  -webkit-backdrop-filter: blur(1.5px);
-          backdrop-filter: blur(1.5px);
   background-color: #faf4f4fb;
   border-radius: 5px;
   padding: 1.3rem;
   gap: 0.4rem;
 }
 
-.overlay .modal .btn-close {
+.overlay .btn-close, .overlay .btn-close-member, .overlay-member .btn-close, .overlay-member .btn-close-member {
   position: absolute;
   top: 0;
   right: 0;
@@ -337,7 +377,7 @@ body .sec-background svg {
   border-radius: 50%;
 }
 
-.overlay .modal form {
+.overlay form, .overlay-member form {
   opacity: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -355,14 +395,19 @@ body .sec-background svg {
   font-size: 2rem;
 }
 
-.overlay .modal form label {
+.overlay form label, .overlay-member form label {
   font-weight: bold;
   font-size: 2.5rem;
   -ms-flex-item-align: start;
       align-self: flex-start;
 }
 
-.overlay .modal form textarea {
+.overlay form input, .overlay-member form input {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.overlay form textarea, .overlay-member form textarea {
   border-radius: 5px;
   height: 15rem;
   width: 24rem;
@@ -374,8 +419,7 @@ body .sec-background svg {
           box-shadow: var(--box-shadow-1);
 }
 
-.overlay .modal form button {
-  margin: 1rem;
+.overlay form button, .overlay-member form button {
   width: 100%;
 }
 

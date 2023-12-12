@@ -6,7 +6,7 @@ html
     script(type="text/javascript" src='/javascripts/listener.js' defer)
   body
     div.sec-background
-      svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 1100 900" width="1100" height="900" version="1.1")
+      svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 1100" width="1100" height='100vh' version="1.1")
         path(d="M602 900L579.5 886.3C557 872.7 512 845.3 523.7 818C535.3 790.7 603.7 763.3 626.2 736.2C648.7 709 625.3 682 601.8 654.8C578.3 627.7 554.7 600.3 560.7 573C566.7 545.7 602.3 518.3 633.7 491C665 463.7 692 436.3 686.5 409C681 381.7 643 354.3 605.5 327C568 299.7 531 272.3 512.7 245.2C494.3 218 494.7 191 505.3 163.8C516 136.7 537 109.3 558.7 82C580.3 54.7 602.7 27.3 613.8 13.7L625 0L1100 0L1100 13.7C1100 27.3 1100 54.7 1100 82C1100 109.3 1100 136.7 1100 163.8C1100 191 1100 218 1100 245.2C1100 272.3 1100 299.7 1100 327C1100 354.3 1100 381.7 1100 409C1100 436.3 1100 463.7 1100 491C1100 518.3 1100 545.7 1100 573C1100 600.3 1100 627.7 1100 654.8C1100 682 1100 709 1100 736.2C1100 763.3 1100 790.7 1100 818C1100 845.3 1100 872.7 1100 886.3L1100 900Z" stroke-linecap="round" stroke-linejoin="miter")
     nav
       a(href='/') 
@@ -29,15 +29,5 @@ html
         a(href='https://www.linkedin.com/in/davidsan13/') 
           img(src='/images/linkedin.png')
       h1 Copyright
-    div.overlay.hidden
-      section.modal.hidden
-        <button class="btn-close">⨉</button>
-        form(method='Post' action='')
-          label(for='message') Message
-          textarea#message.form-control(
-            type='textarea',
-            name='message',
-          )
-          button Submit
     
     

@@ -8,7 +8,9 @@ const passport = require("passport");
 
 // user controller
 exports.user_create_get = asyncHandler(async (req, res, next) => {
-  res.render("sign_up_form")
+  res.render("sign_up_form", {
+    user: req.user,
+  })
 })
 
 exports.user_create_post = [
@@ -81,7 +83,9 @@ exports.user_update_post = asyncHandler(async (req, res, next) => {
 })
 
 exports.user_join_get = asyncHandler(async (req, res) => {
-  res.render("membership")
+  res.render("membership", {
+    user: req.user,
+  })
 })
 exports.user_join_post = asyncHandler(async (req, res, next) => {
   const password = req.body.member

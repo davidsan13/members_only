@@ -51,6 +51,11 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-black);
+  font-weight: bold;
+}
 :root {
   --color-background: #b7eedc;
   --color-background-secondary:#68BD9E;
@@ -90,10 +95,7 @@ body {
     background: var(--color-white);
     // padding-inline-end: 0;
     a {
-      text-decoration: none;
-      color: var(--color-black);
       font-size: 2rem;
-      font-weight: bold;
     }
     .nav-right {
       display: flex;
@@ -132,6 +134,7 @@ body {
       // text-align: right;
       font-weight: bold;
       width: 30%;
+      gap: 1rem;
       h1 {
         align-self: center;
         padding-bottom: 1rem;
@@ -377,10 +380,9 @@ nav, footer {
   padding: .5rem .7rem;
   border-radius: 50%;
   a {
-    text-decoration: none;
+    
     color: var(--color-black);
     font-weight: bold;
-    
   }
 }
 form {

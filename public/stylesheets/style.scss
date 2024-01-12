@@ -32,6 +32,7 @@ ul {
   list-style: none;
 }
 
+
 blockquote,
 q {
   quotes: none;
@@ -126,10 +127,13 @@ body {
       padding: .5rem;
     }
     .content-left {
+      display:flex;
+      flex-direction: column;
       // text-align: right;
       font-weight: bold;
       width: 30%;
       h1 {
+        align-self: center;
         padding-bottom: 1rem;
         font-size: 3.5rem;
       }
@@ -143,10 +147,12 @@ body {
       ul {
         display: flex;
         flex-direction: column;
-        button {
-          align-self: center;
-        }
-  
+        overflow-y: scroll;
+        height: 30rem;
+      }
+      button {
+        align-self: center;
+        width: 25%;
       }
       h1 {
         align-self: center;
@@ -169,6 +175,7 @@ body {
       align-self: flex-start;
       padding-left: 2rem;
       font-weight: bold;
+      gap: 1rem;
     }
     form {
       .form-group{

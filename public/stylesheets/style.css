@@ -145,11 +145,21 @@ body .content button {
 }
 
 body .content .content-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-weight: bold;
   width: 30%;
 }
 
 body .content .content-left h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   padding-bottom: 1rem;
   font-size: 3.5rem;
 }
@@ -176,12 +186,15 @@ body .content .content-right ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow-y: scroll;
+  height: 30rem;
 }
 
-body .content .content-right ul button {
+body .content .content-right button {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  width: 25%;
 }
 
 body .content .content-right h1 {
@@ -215,6 +228,7 @@ body .content .content-right-form {
       align-self: flex-start;
   padding-left: 2rem;
   font-weight: bold;
+  gap: 1rem;
 }
 
 body .content form .form-group {

@@ -11,26 +11,21 @@ block content
           name='message',
         )
         button Submit
-  div.overlay-member.hidden
-    section.modal-member.hidden
-      button.btn-close-member ⨉
-      form(method='Post' action='/join')
-        label(for='member') Password
-        input#member.form-control(
-          type='text',
-          name='member',
-        )
-        button Submit
+
   div.content
     div.content-left
       h1 Members Only
       if user
-        p Welcome #{user.name}
+        p Welcome #{user.first_name}
         if !user.isMember
-        p Only members of the clubhouse are able to see who the author of a post is.
-        button.modal-member-btn(type='button') Join Clubhouse
-      p An exclusive clubhouse platform that allow you to write anyonymous post.
-      
+          p An exclusive clubhouse platform that allow you to write anyonymous post.
+          p Only members of the clubhouse are able to see who the author of a post is.
+          button.modal-member-btn(type='button') 
+            a(href='/join') Join Clubhouse
+        else
+          p Write a message
+      else
+        p sign up and join a clubhouse
     div.content-right
       h1 Messages
       if messages.length == 0
@@ -38,7 +33,6 @@ block content
         p Be the first to post a messags
       else 
         ul
-          // loop through message and crefate 
           each message in messages
             li 
               if user && user.isMember

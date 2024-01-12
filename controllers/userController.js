@@ -6,8 +6,6 @@ const passport = require("passport");
 
 // index 
 
-
-
 // user controller
 exports.user_create_get = asyncHandler(async (req, res, next) => {
   res.render("sign_up_form")
@@ -82,20 +80,24 @@ exports.user_update_post = asyncHandler(async (req, res, next) => {
   res.send('POST update')
 })
 
+exports.user_join_get = asyncHandler(async (req, res) => {
+  res.render("membership")
+})
 exports.user_join_post = asyncHandler(async (req, res, next) => {
   const password = req.body.member
-  if (password == process.env.secret) {
-    const userId = (req.user._id).toString()
-    const userExists = await User.findById(userId).exec()
-    if(userExists) {
-      userExists.isMember = true;
-      await userExists.save()
-      res.redirect("/")
-    }
+  if (password != process.env.secret) {
+    const err = new Error("Incorrect Password")
+    res.render('/join', {errMess: "Incorrect Password"})
   }
   else {
-    console.log('incorrect')
-    res.redirect("/")
+    const userId = (req.user._id).toString()
+    const userExists = await User.findByIdAndUpdate(userId,{$set:{"isMember": true}}).exec()
+    res.redirect('/')
+    // if(userExists) {
+    //   userExists.isMember = true;
+    //   await userExists.save()
+    //   res.redirect("/")
+    // }
   }
 })
 

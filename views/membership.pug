@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+  //- div.overlay-member
+  if errMessage
+  section.modal-member
+    button.btn-close-member 
+      a(href='/') ⨉
+    form(method='Post' action='/join')
+      label(for='member') Password
+      input#member.form-control(
+        type='text',
+        name='member',
+      )
+      button Submit

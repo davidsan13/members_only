@@ -15,9 +15,11 @@ router.get('/login', user_controller.user_login_get)
 
 router.post('/login', user_controller.user_login_post);
 
-router.get('/logout', user_controller.user_logout_get)
+router.get('/logout', user_controller.user_logout_get);
 
-router.post('/join', user_controller.user_join_post)
+router.get('/join', user_controller.user_join_get);
+
+router.post('/join', user_controller.user_join_post);
 
 router.get('/user/:id/update', user_controller.user_update_get)
 

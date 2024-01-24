@@ -12,12 +12,13 @@ html
       a(href='/') 
         h1 Members Only
       ul.nav-right
-        li 
-          a(href='/signup') Sign Up
-        li
-          if !user
+        if !user
+          li
+            a(href='/signup') Sign Up
+          li
             a(href='/login') Log In
-          else
+        else
+          li
             a(href='/logout') Log Out
     
     block content

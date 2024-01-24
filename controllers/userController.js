@@ -3,6 +3,7 @@ const User = require("../models/user")
 const asyncHandler = require("express-async-handler")
 const { body, validationResult } = require("express-validator");
 const passport = require("passport");
+const helper = require("../public/javascripts/utility")
 
 // index 
 
@@ -40,10 +41,10 @@ exports.user_create_post = [
     const errors = validationResult(req);
 
     const encryptPW = await bcrypt.hash(req.body.password, 10)
-
+    
     const user = new User({
-      first_name: req.body.firstName,
-      last_name: req.body.lastName,
+      first_name: helper.capitalize(req.body.firstName),
+      last_name: helper.capitalize(req.body.lastName),
       email: req.body.email,
       password: encryptPW
     })
@@ -58,11 +59,11 @@ exports.user_create_post = [
         .collation({locale: "en", strength: 2})
         .exec();
       if(userExists) {
-        res.redirect("/", {message: "existing email"})
+        res.redirect("/signup", {message: "existing email"})
       } else {
         console.log(user)
         await user.save()
-        res.redirect("/")
+        res.redirect("/", )
       }
     }
   })
@@ -131,4 +132,5 @@ exports.user_logout_get = asyncHandler(async (req, res, next) => {
     res.redirect('/')
   })
 })
+
 

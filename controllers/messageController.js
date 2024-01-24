@@ -8,6 +8,7 @@ exports.index_get = asyncHandler(async (req, res, next) => {
   res.render('index', {
     title: 'Members Only', 
     user: req.user,
+    // first: capitalize(req.user.first_name),
     messages: messages,
   })
 })
@@ -71,4 +72,5 @@ exports.message_room_post = [asyncHandler(async (req, res, next) => {
   res.render("message_room")
 })
 ]
+
 

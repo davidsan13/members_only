@@ -131,7 +131,7 @@ body {
     .content-left {
       display:flex;
       flex-direction: column;
-      // text-align: right;
+      text-justify: inter-word;
       font-weight: bold;
       width: 30%;
       gap: 1rem;
@@ -139,6 +139,14 @@ body {
         align-self: center;
         padding-bottom: 1rem;
         font-size: 3.5rem;
+      }
+      .modal-member-btn {
+        align-self: center;
+        width: 50%;
+        font-size: 2rem;
+        a {
+          color: var(--color-white);
+        }
       }
     }
     .content-right {
@@ -278,8 +286,8 @@ body {
     gap: 0.4rem;
   }
   .btn-close {
-    // position: absolute;
-    // top: 0;
+    position: absolute;
+    top: 0;
     right: 0;
     margin: 1rem;
     font-size: 1rem;
@@ -332,6 +340,12 @@ button {
   border-radius: 5px;
   background-color: var(--color-button);
   box-shadow: var(--box-shadow-1);
+  &:hover {
+    background-color: var(--color-button-hover)
+  }
+  &:active {
+    transform: translateY(4px)
+  }
 }
 nav, footer {
   box-shadow:  var(--box-shadow-1);

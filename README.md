@@ -1,4 +1,4 @@
-# Message Board [Live Demo](membersonly.up.railway.app)
+# Message Board [Live Demo](https://membersonly.up.railway.app/)
 
 (Add Summary)
 

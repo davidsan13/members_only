@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const compression = require("compression");
+const helmet = require("helmet");
 
 const bcrypt = require("bcryptjs")
 
@@ -66,7 +68,14 @@ passport.deserializeUser(async (id, done) => {
 app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      "script-src": ["'self'", "code.jquery.com", "cdn.jsdelivr.net"],
+    },
+  }),
+);
+app.use(compression())
 
 app.use(logger('dev'));
 app.use(express.json());

@@ -5,13 +5,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const compression = require("compression");
 const helmet = require("helmet");
+const session = require("express-session");
 const MemoryStore = require('memorystore')(session);
 
 const bcrypt = require("bcryptjs")
 
 const User = require("./models/user");
 
-const session = require("express-session");
+
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 

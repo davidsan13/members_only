@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const compression = require("compression");
 const helmet = require("helmet");
+const MemoryStore = require('memorystore')(session);
 
 const bcrypt = require("bcryptjs")
 
@@ -65,7 +66,14 @@ passport.deserializeUser(async (id, done) => {
   };
 });
 
-app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
+app.use(session({ 
+  secret: "cats",
+  resave: false,
+  saveUninitialized: true ,
+  store: new MemoryStore({
+    checkPeriod: 86400000
+  })
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(

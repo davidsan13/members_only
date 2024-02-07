@@ -39,8 +39,8 @@ block content
               if user && user.isMember
                 h1.user=user ? 'name' : 'no name'
               h2 #{message.text}
-        if(user)
-          if(user.isMember)
-            button.message-btn(type='button') Add Message
+      if(user)
+        if(user.isMember)
+          button.message-btn(type='button') Add Message
 
           
